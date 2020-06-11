@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto de Gasolina</title>
+</head>
+<body>
+    
+    <script>
+        let combustivelEscolhido;
+        let litrosCombustivel;
+
+        function getCombustivel() {
+            combustivelEscolhido = +window.prompt("Digite '1' para Álcool e '2' para Gasolina:");
+            if (combustivelEscolhido !== 1 && combustivelEscolhido !== 2) {
+                window.alert("Código inválido!");
+                getCombustivel();
+            }
+        }
+
+        function getLitros() {
+            litrosCombustivel = Number(window.prompt("Digite a quantidade de litros desejada:"));
+            if (litrosCombustivel <= 0 || isNaN(litrosCombustivel) == true) {
+                window.alert("Código inválido!");
+                getLitros();
+            }
+        }
+
+        function compraCombustivel() {
+            getCombustivel();
+            getLitros()
+
+            if (combustivelEscolhido == 1) {
+                document.write(`Tipo de combustível escolhido: ${combustivelEscolhido} - Álcool. <br> Litros desejados: ${litrosCombustivel}L. <br> Valor total da compra: R$ ${litrosCombustivel * 3.16}`);
+            } else {
+                document.write(`Tipo de combustível escolhido: ${combustivelEscolhido} - Gasolina. <br> Litros desejados: ${litrosCombustivel}L. <br> Valor total da compra: R$ ${litrosCombustivel * 4.19}`);
+            }
+        }
+
+        compraCombustivel();
+    </script>
+</body>
+</html>
