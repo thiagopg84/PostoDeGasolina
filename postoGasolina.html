@@ -20,7 +20,7 @@
         }
 
         function getLitros() {
-            litrosCombustivel = Number(window.prompt("Digite a quantidade de litros desejada:"));
+            litrosCombustivel = +window.prompt("Digite a quantidade de litros desejada:");
             if (litrosCombustivel <= 0 || isNaN(litrosCombustivel) == true) {
                 window.alert("Código inválido!");
                 getLitros();
