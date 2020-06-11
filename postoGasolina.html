@@ -8,28 +8,28 @@
 <body>
     
     <script>
-        let combustivelEscolhido;
-        let litrosCombustivel;
-
-        function getCombustivel() {
-            combustivelEscolhido = +window.prompt("Digite '1' para Álcool e '2' para Gasolina:");
-            if (combustivelEscolhido !== 1 && combustivelEscolhido !== 2) {
-                window.alert("Código inválido!");
-                getCombustivel();
-            }
-        }
-
-        function getLitros() {
-            litrosCombustivel = +window.prompt("Digite a quantidade de litros desejada:");
-            if (litrosCombustivel <= 0 || isNaN(litrosCombustivel) == true) {
-                window.alert("Código inválido!");
-                getLitros();
-            }
-        }
-
         function compraCombustivel() {
+            let combustivelEscolhido;
+            let litrosCombustivel;
+
+            function getCombustivel() {
+                combustivelEscolhido = +window.prompt("Digite '1' para Álcool e '2' para Gasolina:");
+                if (combustivelEscolhido !== 1 && combustivelEscolhido !== 2) {
+                    window.alert("Código inválido!");
+                    getCombustivel();
+                }
+            }
+
+            function getLitros() {
+                litrosCombustivel = +window.prompt("Digite a quantidade de litros desejada:");
+                if (litrosCombustivel <= 0 || isNaN(litrosCombustivel) == true) {
+                    window.alert("Código inválido!");
+                    getLitros();
+                }
+            }
+
             getCombustivel();
-            getLitros()
+            getLitros();
 
             if (combustivelEscolhido == 1) {
                 document.write(`Tipo de combustível escolhido: ${combustivelEscolhido} - Álcool. <br> Litros desejados: ${litrosCombustivel}L. <br> Valor total da compra: R$ ${litrosCombustivel * 3.16}`);
